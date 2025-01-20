@@ -1,0 +1,17 @@
+wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-6.2.1.4610-linux-x64.zip 
+#unzip the file
+
+#to install unzip
+sudo apt-get install unzip
+
+unzip sonar-scanner-cli-6.2.1.4610-linux-x64.zip 
+
+sudo mv sonar-scanner-cli-6.2.1.4610-linux-x64.zip  /opt/sonar-scanner
+
+#Edit your .bashrc (or .zshrc for Zsh users) to add the SonarScanner bin directory to the system path:
+
+echo 'export PATH=$PATH:/opt/sonar-scanner/bin' >> ~/.bashrc
+source ~/.bashrc
+
+#Verify the installation by running:
+sonar-scanner -v
